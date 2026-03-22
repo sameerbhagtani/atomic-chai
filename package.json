@@ -38,7 +38,7 @@
     "bugs": {
         "url": "https://github.com/sameerbhagtani/atomic-chai/issues"
     },
-    "homepage": "https://github.com/sameerbhagtani/atomic-chai#readme",
+    "homepage": "https://sameerbhagtani.github.io/atomic-chai-website",
     "devDependencies": {
         "tsup": "^8.5.1",
         "typescript": "^5.9.3"
