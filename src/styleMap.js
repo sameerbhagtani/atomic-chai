@@ -66,7 +66,6 @@ const styleMap = {
     //#region border
     "chai-border": {
         "border-width": "1px",
-        "border-style": "solid",
     },
 
     "chai-border-solid": { "border-style": "solid" },

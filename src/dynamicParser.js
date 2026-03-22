@@ -285,7 +285,6 @@ const rules = [
         match: /^chai-border-(\d+)$/,
         handler: ([_, value]) => ({
             "border-width": `${value}px`,
-            "border-style": "solid",
         }),
     },
     {

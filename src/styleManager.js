@@ -2,24 +2,40 @@ import styleMap from "./styleMap.js";
 import styleStore from "./styleStore.js";
 import parseDynamicClass from "./dynamicParser.js";
 
+const classCache = new Map();
+
 export default function applyStyles(element) {
     const prevStyles = styleStore.get(element) || {};
+    const newStyles = parseClasses(element.classList);
 
-    // remove all the styles that we previously set
+    // remove styles that no longer exist
     for (let key in prevStyles) {
-        element.style.removeProperty(key);
+        if (!(key in newStyles)) {
+            element.style.removeProperty(key);
+        }
     }
 
-    const styles = parseClasses(element.classList);
-
-    for (let key in styles) {
-        element.style.setProperty(key, styles[key]);
+    // add / update styles
+    for (let key in newStyles) {
+        if (prevStyles[key] !== newStyles[key]) {
+            element.style.setProperty(key, newStyles[key]);
+        }
     }
 
-    styleStore.set(element, styles);
+    styleStore.set(element, newStyles);
 }
 
 function parseClasses(classList) {
+    const key = [...classList]
+        .filter((cls) => cls.startsWith("chai-"))
+        .join(" ");
+
+    if (classCache.has(key)) {
+        return classCache.get(key);
+    }
+
+    console.log("here");
+
     const styles = {};
 
     classList.forEach((cls) => {
@@ -37,6 +53,8 @@ function parseClasses(classList) {
             Object.assign(styles, dynamicStyles);
         }
     });
+
+    classCache.set(key, styles);
 
     return styles;
 }
