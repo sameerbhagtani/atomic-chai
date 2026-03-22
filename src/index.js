@@ -127,8 +127,5 @@ const AtomicChai = {
     addClass: addCustomClass,
 };
 
-if (typeof window !== "undefined") {
-    window.AtomicChai = AtomicChai;
-}
-
+export { AtomicChai };
 export default AtomicChai;
