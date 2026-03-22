@@ -15,7 +15,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsup src/index.js --format esm,cjs,iife --global-name AtomicChai --clean"
+        "build": "tsup src/index.js --format esm,cjs,iife --global-name AtomicChai --minify --clean"
     },
     "keywords": [
         "css",
