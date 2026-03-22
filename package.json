@@ -1,0 +1,46 @@
+{
+    "name": "atomic-chai",
+    "version": "1.0.0",
+    "description": "A lightweight client-side utility CSS engine like Tailwind",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup src/index.js --format esm,cjs,iife --global-name AtomicChai --clean"
+    },
+    "keywords": [
+        "css",
+        "atomic-chai",
+        "utility",
+        "tailwind",
+        "inline-styles",
+        "runtime-css",
+        "chaicode",
+        "no-build"
+    ],
+    "author": "Sameer Bhagtani",
+    "unpkg": "dist/index.global.js",
+    "jsdelivr": "dist/index.global.js",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sameerbhagtani/atomic-chai.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sameerbhagtani/atomic-chai/issues"
+    },
+    "homepage": "https://github.com/sameerbhagtani/atomic-chai#readme",
+    "devDependencies": {
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.3"
+    }
+}
