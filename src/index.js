@@ -7,7 +7,7 @@ function injectResetStyles() {
     const style = document.createElement("style");
     style.id = "atomic-chai-reset";
 
-    style.textContent = `
+    const css = `
         *,
         ::after,
         ::before,
@@ -102,6 +102,8 @@ function injectResetStyles() {
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
     `;
+
+    style.textContent = css.replace(/\s+/g, " ").trim();
 
     document.head.appendChild(style);
 }
