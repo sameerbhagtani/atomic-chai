@@ -344,6 +344,8 @@ AtomicChai uses a **pattern-based utility system**.
 | chai-opacity-50        | opacity: 0.5                                                             |
 | chai-opacity-100       | opacity: 1                                                               |
 
+---
+
 ## 🤝 Contributing
 
 Feel free to open issues or submit PRs!
