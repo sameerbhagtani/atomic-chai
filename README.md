@@ -346,6 +346,34 @@ AtomicChai uses a **pattern-based utility system**.
 
 ---
 
+## Extending AtomicChai
+
+Create your own utility classes and extend Atomic Chai to fit your needs.
+
+### Add custom classes
+
+Define your own class by providing a name and a style object.
+
+```js
+AtomicChai.addClass("chai-my-class", { "background-color": "red" });
+```
+
+### Usage
+
+Once added, you can use your custom class anywhere in your HTML.
+
+```html
+<div class="chai-my-class"></div>
+```
+
+### Rules
+
+- Class names must start with `chai-`
+- Styles are written using CSS property syntax (e.g. `"background-color": "red"`)
+- Works instantly without any build step
+
+---
+
 ## 🤝 Contributing
 
 Feel free to open issues or submit PRs!
