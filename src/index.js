@@ -127,4 +127,5 @@ const AtomicChai = {
     addClass: addCustomClass,
 };
 
+export { initAtomicChai as init, addCustomClass as addClass };
 export default AtomicChai;
