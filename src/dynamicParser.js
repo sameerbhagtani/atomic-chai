@@ -211,6 +211,7 @@ const rules = [
             width: value,
         }),
     },
+
     {
         match: /^chai-h-(\d+)$/,
         handler: ([_, value]) => ({
@@ -221,6 +222,58 @@ const rules = [
         match: /^chai-h-\[(.+)\]$/,
         handler: ([_, value]) => ({
             height: value,
+        }),
+    },
+
+    {
+        match: /^chai-max-w-(\d+)$/,
+        handler: ([_, value]) => ({
+            "max-width": `${value * 4}px`,
+        }),
+    },
+    {
+        match: /^chai-max-w-\[(.+)\]$/,
+        handler: ([_, value]) => ({
+            "max-width": value,
+        }),
+    },
+
+    {
+        match: /^chai-max-h-(\d+)$/,
+        handler: ([_, value]) => ({
+            "max-height": `${value * 4}px`,
+        }),
+    },
+    {
+        match: /^chai-max-h-\[(.+)\]$/,
+        handler: ([_, value]) => ({
+            "max-height": value,
+        }),
+    },
+
+    {
+        match: /^chai-min-w-(\d+)$/,
+        handler: ([_, value]) => ({
+            "min-width": `${value * 4}px`,
+        }),
+    },
+    {
+        match: /^chai-min-w-\[(.+)\]$/,
+        handler: ([_, value]) => ({
+            "min-width": value,
+        }),
+    },
+
+    {
+        match: /^chai-min-h-(\d+)$/,
+        handler: ([_, value]) => ({
+            "min-height": `${value * 4}px`,
+        }),
+    },
+    {
+        match: /^chai-min-h-\[(.+)\]$/,
+        handler: ([_, value]) => ({
+            "min-height": value,
         }),
     },
     //#endregion
