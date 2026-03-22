@@ -227,6 +227,16 @@ const rules = [
 
     //#region colors & typography
     {
+        match: /^chai-(text|bg)-(black|white)$/,
+        handler: ([_, type, color]) => {
+            const value = color === "black" ? "#000000" : "#ffffff";
+
+            return type === "text"
+                ? { color: value }
+                : { "background-color": value };
+        },
+    },
+    {
         match: /^chai-text-([a-z]+)-(\d{2,3})$/,
         handler: ([_, color, shade]) => {
             const hex = colors[color]?.[shade];
