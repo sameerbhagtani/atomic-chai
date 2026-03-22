@@ -1,4 +1,5 @@
 import { scanNode, observeDOM } from "./domManager.js";
+import { addCustomClass } from "./styleManager.js";
 
 function injectResetStyles() {
     if (document.getElementById("atomic-chai-reset")) return;
@@ -121,10 +122,13 @@ function initAtomicChai() {
 
 initAtomicChai();
 
+const AtomicChai = {
+    init: initAtomicChai,
+    addClass: addCustomClass,
+};
+
 if (typeof window !== "undefined") {
-    window.AtomicChai = {
-        init: initAtomicChai,
-    };
+    window.AtomicChai = AtomicChai;
 }
 
-export default initAtomicChai;
+export default AtomicChai;

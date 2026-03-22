@@ -4,7 +4,7 @@ import parseDynamicClass from "./dynamicParser.js";
 
 const classCache = new Map();
 
-export default function applyStyles(element) {
+export function applyStyles(element) {
     const prevStyles = styleStore.get(element) || {};
     const newStyles = parseClasses(element.classList);
 
@@ -34,8 +34,6 @@ function parseClasses(classList) {
         return classCache.get(key);
     }
 
-    console.log("here");
-
     const styles = {};
 
     classList.forEach((cls) => {
@@ -57,4 +55,19 @@ function parseClasses(classList) {
     classCache.set(key, styles);
 
     return styles;
+}
+
+export function addCustomClass(className, styles) {
+    if (!className.startsWith("chai-")) {
+        throw new Error(
+            `AtomicChai: Custom class "${className}" must start with "chai-"`,
+        );
+    }
+
+    styleMap[className] = styles;
+    classCache.clear();
+
+    document.querySelectorAll(`[class~="${className}"]`).forEach((el) => {
+        applyStyles(el);
+    });
 }

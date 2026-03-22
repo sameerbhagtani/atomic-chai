@@ -1,4 +1,4 @@
-import applyStyles from "./styleManager.js";
+import { applyStyles } from "./styleManager.js";
 
 export function scanNode(node) {
     // handle root
