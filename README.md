@@ -24,9 +24,11 @@ AtomicChai includes a minimal reset so you start with a consistent baseline acro
 
 Generate styles on the fly using dynamic values:
 
-    chai-p-4 → padding: 16px
-    chai-w-[300px] → width: 300px
-    chai-text-orange-500 → color from palette
+```
+chai-p-4 -> padding: 16px
+chai-w-[300px] -> width: 300px
+chai-text-orange-500 -> color from palette
+```
 
 ---
 
@@ -54,9 +56,11 @@ No special integration required.
 
 Add your own custom utilities at runtime:
 
-    AtomicChai.addClass("chai-custom", {
-      color: "red",
-    });
+```js
+AtomicChai.addClass("chai-custom", {
+    color: "red",
+});
+```
 
 ---
 
@@ -64,17 +68,21 @@ Add your own custom utilities at runtime:
 
 ### 📥 Install via npm
 
-    npm install atomic-chai
+```bash
+npm install atomic-chai
+```
 
-    import initAtomicChai from "atomic-chai";
-
-    initAtomicChai();
+```js
+import "atomic-chai";
+```
 
 ---
 
 ### 🌐 Use via CDN
 
-    <script src="https://unpkg.com/atomic-chai"></script>
+```js
+<script src="https://unpkg.com/atomic-chai"></script>
+```
 
 That’s it - start using classes immediately.
 
